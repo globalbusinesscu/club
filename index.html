@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +40,56 @@
       max-width: 200px;
       height: auto;
     }
-  </style>
+ /* NAV BAR */
+.navbar {
+  background-color: #c9a23f; /* gold */
+  padding: 10px 80px;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+
+/* DROPDOWN MENU */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f5f5f5;
+  min-width: 160px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.dropdown a:hover {
+  background-color: #e6e6e6;
+}
+
+.navbar li:hover .dropdown {
+  display: block;
+}
+
+ </style>
 </head>
 
 <body>
@@ -54,6 +104,35 @@
       <img src="gbclogo.png" alt="Global Business Club Logo">
     </div>
   </section>
+<nav class="navbar">
+  <ul>
+    <li><a href="#">Home</a></li>
 
+    <li>
+      <a href="#">Information</a>
+      <div class="dropdown">
+        <a href="#">Meetings</a>
+        <a href="#">Join Here</a>
+      </div>
+    </li>
+
+    <li>
+      <a href="#">Events</a>
+      <div class="dropdown">
+        <a href="#">Calendar</a>
+        <a href="#">Past Events</a>
+      </div>
+    </li>
+
+    <li>
+      <a href="#">Contact</a>
+      <div class="dropdown">
+        <a href="#">Contact Us</a>
+        <a href="#">Executive Board</a>
+      </div>
+    </li>
+  </ul>
+</nav>
 </body>
 </html>
+
