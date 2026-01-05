@@ -127,8 +127,7 @@ background-color: #fafbff;
 
     /* ABOUT US SECTION */
     .about {
-background-color: #020b1a; /* navy blue background */
-  color: white;       
+background-color: #020b1a; /* navy blue background */      
 padding: 60px 80px;
       max-width: 1000px;
       margin: auto;
@@ -173,7 +172,38 @@ font-family: 'Poppins', sans-serif;
     flex-direction: column;
     text-align: center;
   }
+.footer {
+  background-color: white;
+  color: #020b1a;
+  padding: 25px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-left a {
+  color: #020b1a;
+  font-size: 22px;
+  transition: opacity 0.2s ease;
+}
+
+.footer-left a:hover {
+  opacity: 0.6;
+}
+
+.footer-right {
+  font-size: 14px;
+}
+
   </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
 </head>
 
 <body>
@@ -231,6 +261,24 @@ font-family: 'Poppins', sans-serif;
     </div>
   </div>
 </section>
+<footer class="footer">
+  <div class="footer-left">
+    <a href="https://www.linkedin.com" target="_blank">
+      <i class="fa-brands fa-linkedin"></i>
+    </a>
+    <a href="https://www.instagram.com" target="_blank">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="mailto:cuglobalbusinessclub@gmail.com">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+
+  <div class="footer-right">
+    © 2025 CU Global Business Club
+  </div>
+</footer>
+
 
 </body>
 </html>
