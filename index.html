@@ -200,7 +200,23 @@
 }
 
 .navbar-items a.join {
-  color: #c9a23f; /* gold */
+  color: #c9a23f;
+}
+
+.navbar-items li:hover > a.join {
+  opacity: 0.85;
+}
+
+/* Vertical dividers between navbar items */
+.navbar-items li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -50px;              /* half of gap (100px / 2) */
+  top: 50%;
+  transform: translateY(-50%);
+  height: 25px;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 /* Dropdown menus */
@@ -220,12 +236,12 @@ z-index: 10000;
   display: block;
   padding: 10px;
   font-size: 13px;
-  color: black;
-text align: center;
+  color: white;
+text-align: center;
 }
 
 .dropdown a:hover {
-  background-color: #e6e6e6;
+  background-color: #020b1a;
 }
 
 .navbar-items li:hover .dropdown {
@@ -275,8 +291,12 @@ text align: center;
   <!-- NAV BAR -->
   <nav class="navbar">
   <ul class="navbar-items">
-    <li><a href="#" class="join">Join</a></li>
-    <li><a href="#">Home</a></li>
+    <li>
+  <a href="#" class="join">Join</a>
+  <div class="dropdown">
+    <a href="#">Join Here</a>
+  </div>
+</li>
     <li>
       <a href="#">Events</a>
       <div class="dropdown">
