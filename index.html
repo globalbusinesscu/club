@@ -14,7 +14,9 @@
     /* NAV BAR */
    .navbar {
   background-color: #020b1a; /* darker navy */
-  padding: 15px 0;
+  padding: 10px 0;       /* enough padding for dropdown to clear? */
+  overflow: visible;     /* IMPORTANT: allows dropdown to show outside nav */
+  position: relative;    /* needed for absolute children to position correctly */
 }
 
 .navbar-items {
