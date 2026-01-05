@@ -13,7 +13,7 @@
     body {
       margin: 0;
   font-family: 'Poppins', sans-serif;
-  font-weight: 250; /* extra light */
+  font-weight: 400; /* light */
 }
 
     /* NAV BAR */
@@ -43,7 +43,7 @@
 
 .navbar-items a {
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 20px;
   color: white;
 /* Smooth hover transitions for all nav links */
@@ -127,7 +127,9 @@ background-color: #fafbff;
 
     /* ABOUT US SECTION */
     .about {
-      padding: 60px 80px;
+background-color: #020b1a; /* navy blue background */
+  color: white;       
+padding: 60px 80px;
       max-width: 1000px;
       margin: auto;
     }
@@ -136,7 +138,7 @@ background-color: #fafbff;
       font-size: 36px;
       margin-bottom: 20px;
 font-family: 'Poppins', sans-serif;
-  font-weight: 250;
+  font-weight: 400;
 
     }
 
@@ -144,9 +146,36 @@ font-family: 'Poppins', sans-serif;
       font-size: 18px;
       line-height: 1.6;
 font-family: 'Poppins', sans-serif;
-  font-weight: 250;
+  font-weight: 400
 
     }
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px; /* space between image and text */
+  max-width: 1200px;
+  margin: auto;
+}
+
+.about-image img {
+  max-width: 400px;   /* medium-sized image */
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
 
   </style>
 </head>
@@ -192,12 +221,20 @@ font-family: 'Poppins', sans-serif;
 </section>
 
   <!-- ABOUT US / HOME CONTENT -->
-  <section class="about">
-    <h2>About Us</h2>
-    <p>
-      We are a student-led organization focused on connecting students with global business trends, providing leadership opportunities, and creating real-world experience. More content will be added here later.
-    </p>
-  </section>
+<section class="about-section">
+  <div class="about-container">
+    <div class="about-image">
+      <img src="aboutimage.png" alt="About Us Image">
+    </div>
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>
+        We are a student-led organization focused on connecting students with global business trends,
+        providing leadership opportunities, and creating real-world experience. More content will be added here later.
+      </p>
+    </div>
+  </div>
+</section>
 
 </body>
 </html>
