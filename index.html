@@ -170,22 +170,21 @@ padding-left: 40px;
 .about-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 60px; /* space between image and text */
-  max-width: 4000px;
+  gap: 60px;
+  max-width: 1800px;
   margin: auto;
 }
 
+.about-image {
+  flex: 3;        /* image dominates */
+}
+
 .about-image img {
-  max-width: none;
   width: 100%;
   height: auto;
-  border-radius: 0px;
-margin-left: 20px;
-margin-top: 70px;
-  padding: 0;
-flex-shrink: 0;
-flex: 2.5;
+  max-width: none;
+  display: block;
+
 }
 
 .meetings-section {
@@ -241,7 +240,7 @@ box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 .meeting-card p {
   margin: 0;
   font-size: 20px;
-  color: black;
+  color: red;
 }
 
 .meeting-icon {
