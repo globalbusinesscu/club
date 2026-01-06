@@ -24,6 +24,7 @@
   position: sticky;    
   top: 0; 
  z-index: 9999;
+box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -135,16 +136,16 @@ background-color: #fafbff;
 
 
     .about-text h2 {
-      font-size: 40px;
+      font-size: 32px;
 color: white;
       margin-bottom: 20px;
 font-family: 'Poppins', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
 
     }
 
     .about-text p {
-      font-size: 24px;
+      font-size: 18px;
       line-height: 1.6;
 color: white;
 font-family: 'Poppins', sans-serif;
@@ -180,16 +181,20 @@ font-family: 'Poppins', sans-serif;
 .footer {
   background-color: #020b1a; /* navy */
   color: white;
-  padding: 30px 60px;
+  padding: 40px 80px;
   display: flex;
- justify-content: flex-start;
   gap: 60px;
   align-items: center;
+ box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.35);
+position: relative;
 }
 
 .footer-left {
   display: flex;
   gap: 25px;
+ position: absolute;
+  left: 120px;                 /* moves icons toward center */
+  bottom: 35px;  
 }
 
 .footer-left a {
@@ -204,8 +209,12 @@ font-family: 'Poppins', sans-serif;
 }
 
 .footer-right {
+  position: absolute;
+  right: 80px;
+  bottom: 35px;
+
   font-size: 14px;
-font-weight: 500;
+  font-weight: 500;
 }
 
   </style>
