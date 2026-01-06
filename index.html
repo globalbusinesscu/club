@@ -149,6 +149,7 @@ font-family: 'Poppins', sans-serif;
 color: white;
 font-family: 'Poppins', sans-serif;
   font-weight: 450
+max-width: 450px;
 
     }
 .about-container {
@@ -161,12 +162,13 @@ font-family: 'Poppins', sans-serif;
 }
 
 .about-image img {
-  max-width: 1000px;   /* medium-sized image */
+  max-width: none;   /* medium-sized image */
   width: 100%;
   height: auto;
   border-radius: 0px;
  margin-top: 40px;
     margin-bottom: 20px;
+flex: 1;
 }
 
 .meetings-section {
@@ -209,6 +211,10 @@ font-family: 'Poppins', sans-serif;
   color: #c9a23f; /* gold */
 }
 
+.meeting-card:hover {
+  transform: translateY(-3px);
+  transition: transform 0.2s ease;
+}
 
 .footer {
   background-color: #e6e8f0; /* white */
@@ -336,7 +342,7 @@ position: relative;
 
     <div class="meeting-card">
       <i class="fa-solid fa-globe meeting-icon"></i>
-      <p>All majors welcome!</p>
+      <p><strong>All majors welcome!</strong></p>
     </div>
 
   </div>
