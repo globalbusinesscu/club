@@ -79,16 +79,17 @@ font-family: 'Poppins', sans-serif;
 
 /* Dropdown menus */
 .dropdown {
-  display: none;
+  display: block;
   position: absolute;
   top: 100%;
   left: 50%;
-transform: translateX(-50%);
+transform: translateX(-50%) translateY(-10px); /* start slightly up */
   background-color: #e6e8f0;
   min-width: 120px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 z-index: 10000;
 pointer-events: auto;
+transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .dropdown a {
@@ -110,7 +111,9 @@ background-color: #f5f7fa;
 }
 
 .navbar-items li:hover .dropdown {
-  display: block;
+ transform: translateX(-50%) translateY(0); /* move to correct position */
+  opacity: 1;  /* fully visible */
+  pointer-events: auto; /* allow clicks */
 }
 
 /* Logo */
