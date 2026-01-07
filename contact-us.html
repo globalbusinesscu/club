@@ -126,7 +126,16 @@ background-color: #f5f7fa;
       padding: 80px 40px;
     }
 
-    .contact-card {
+.contact-section h2 {
+  color: white;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+    .contact-form {
       background-color: rgba(255, 255, 255, 0.92);
       max-width: 700px;
       width: 100%;
@@ -136,13 +145,13 @@ background-color: #f5f7fa;
       text-align: center;
     }
 
-    .contact-card h1 {
+    .contact-form h1 {
       font-size: 36px;
       margin-bottom: 30px;
       font-weight: 500;
     }
 
-    .contact-card label {
+    .contact-form label {
       display: block;
       text-align: left;
       font-weight: 500;
@@ -150,8 +159,8 @@ background-color: #f5f7fa;
       font-size: 16px;
     }
 
-    .contact-card input,
-    .contact-card textarea {
+    .contact-form input,
+    .contact-form textarea {
       width: 100%;
       padding: 14px;
       font-family: 'Poppins', sans-serif;
@@ -162,24 +171,25 @@ background-color: #f5f7fa;
       box-sizing: border-box;
     }
 
-    .contact-card textarea {
+    .contact-form textarea {
       min-height: 180px;
       resize: vertical;
     }
 
-    .contact-card button {
+    .contact-form button {
       background-color: #c9a23f;
       color: black;
       border: none;
       padding: 14px 32px;
       font-size: 16px;
       font-weight: 500;
+font-family: 'Poppins', sans-serif;
       cursor: pointer;
       transition: opacity 0.2s ease;
 border-radius: 8px
     }
 
-    .contact-card button:hover {
+    .contact-form button:hover {
       opacity: 0.8;
     }
 
@@ -252,17 +262,23 @@ border-radius: 8px
 
 <!-- CONTACT CONTENT -->
 <section class="contact-section">
-  <div class="contact-card">
+  <div class="contact-form">
     <h1>Send Us an Email!</h1>
 
+
+<form action="https://formspree.io/f/xojvgvbp" method="POST">
+  <label for="email">Your Email</label>
+  <input type="email" name="email" id="email" placeholder="yourname@email.com" required>
     <label for="subject">Subject</label>
-    <input type="text" id="subject" placeholder="What would you like to talk about?">
+  <input type="text" name="subject" id="subject" placeholder="What would you like to talk about?" required>
 
-    <label for="message">Message</label>
-    <textarea id="message" placeholder="Write your message here..."></textarea>
+  <label for="message">Message</label>
+  <textarea name="message" id="message" placeholder="Write your message here..." required></textarea>
 
-    <button>Send Message</button>
-  </div>
+  <button type="submit">Send Message</button>
+</form>
+<div id="form-status"></div>
+
 </section>
 
 <!-- FOOTER -->
