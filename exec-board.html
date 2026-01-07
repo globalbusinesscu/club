@@ -62,7 +62,7 @@ font-family: 'Poppins', sans-serif;
 }
 
 .navbar-items > li:hover > a {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 /* Vertical dividers between navbar items */
@@ -79,17 +79,17 @@ font-family: 'Poppins', sans-serif;
 
 /* Dropdown menus */
 .dropdown {
-  display: block;
+  display: none;
   position: absolute;
   top: 100%;
   left: 50%;
-transform: translateX(-50%) translateY(-10px); /* start slightly up */
+transform: translateX(-50%);
   background-color: #e6e8f0;
   min-width: 120px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 z-index: 10000;
 pointer-events: auto;
-transition: opacity 0.3s ease, transform 0.3s ease;
+transition: opacity 0.2s ease, transform 0.3s ease;
 }
 
 .dropdown a {
@@ -111,9 +111,7 @@ background-color: #f5f7fa;
 }
 
 .navbar-items li:hover .dropdown {
- transform: translateX(-50%) translateY(0); /* move to correct position */
-  opacity: 1;  /* fully visible */
-  pointer-events: auto; /* allow clicks */
+  display: block;
 }
 
 /* Logo */
@@ -134,19 +132,18 @@ background-color: #f5f7fa;
 }
 
 .group-photo {
-  display: block;        /* ensures it doesn’t float weirdly */
-  max-width: 800px;      /* or whatever width you want */
+  display: block;        
+  max-width: 800px;      
   width: 100%;           /* makes it responsive */
   height: auto;          /* keeps aspect ratio */
-  margin: -20px auto 40px;   /* centers it and adds space below */
-  border-radius: 8px;    /* optional: rounded corners */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* optional shadow */
- transition: transform 0.3s ease;
+  margin: -20px auto 40px;   
+  border-radius: 8px;    
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3); 
+ transition: transform 0.3s ease; 
 }
 
-.group-photo:hover img {
-  transform: scale(1.05);
-
+.group-photo:hover {
+  transform: scale(1.05); 
 }
 
 
