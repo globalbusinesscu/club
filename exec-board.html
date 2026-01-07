@@ -132,13 +132,20 @@ background-color: #f5f7fa;
 
 .group-photo {
   display: block;        /* ensures it doesn’t float weirdly */
-  max-width: 700px;      /* or whatever width you want */
+  max-width: 800px;      /* or whatever width you want */
   width: 100%;           /* makes it responsive */
   height: auto;          /* keeps aspect ratio */
-  margin: 0 auto 40px;   /* centers it and adds space below */
+  margin: -20px auto 40px;   /* centers it and adds space below */
   border-radius: 8px;    /* optional: rounded corners */
   box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* optional shadow */
+ transition: transform 0.3s ease;
 }
+
+.group-photo:hover img {
+  transform: scale(1.05);
+
+}
+
 
 .exec-section h1 {
   color: white;
@@ -163,6 +170,7 @@ background-color: #f5f7fa;
 .exec-card:hover {
   transform: translateY(-8px); /* slightly lifts the card */
   box-shadow: 0 14px 35px rgba(0,0,0,0.35); /* deeper shadow */
+ transition: transform 0.3s ease;
 }
 
 .exec-card img {
