@@ -130,6 +130,16 @@ background-color: #f5f7fa;
   align-items: center;
 }
 
+.group-photo {
+  display: block;        /* ensures it doesn’t float weirdly */
+  max-width: 900px;      /* or whatever width you want */
+  width: 100%;           /* makes it responsive */
+  height: auto;          /* keeps aspect ratio */
+  margin: 0 auto 40px;   /* centers it and adds space below */
+  border-radius: 8px;    /* optional: rounded corners */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* optional shadow */
+}
+
 .exec-section h1 {
   color: white;
   font-size: 40px;
@@ -294,6 +304,7 @@ footer::before {
 
 <!-- EXEC CONTENT -->
 <section class="exec-section">
+<img src="images/group-photo.jpg" alt="Executive Board Group Photo" class="group-photo">
   <h1>Executive Board</h1>
 
 <!-- Member 1: Brandon -->
