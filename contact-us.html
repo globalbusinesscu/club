@@ -19,7 +19,7 @@
     }
 
     /* ================= NAVBAR (UNCHANGED) ================= */
-     /* NAV BAR */
+    /* NAV BAR */
    .navbar {
   background-color: #e6e8f0; /* white */
   padding: 8px 0;       /* enough padding for dropdown to clear? */
@@ -117,6 +117,7 @@ background-color: #f5f7fa;
   height: auto;
 }
 
+
     /* ================= CONTACT CONTENT ================= */
     .contact-section {
       min-height: 80vh;
@@ -195,34 +196,72 @@ border-radius: 8px
 
     /* ================= FOOTER (UNCHANGED) ================= */
     .footer {
-      background-color: #e6e8f0;
-      padding: 40px 80px;
-      display: flex;
-      align-items: center;
-      box-shadow: 0 -25px 60px rgba(0, 0, 0, 0.5);
-      position: relative;
-    }
+  background-color: #e6e8f0; /* white */
+  color: black;
+  padding: 40px 80px;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+   box-shadow: 0 -25px 60px rgba(0, 0, 0, 0.5);
+z-index: 2;
+position: relative;
+}
 
-    .footer-left {
-      display: flex;
-      gap: 50px;
-      position: absolute;
-      left: 120px;
-      bottom: 10px;
-    }
+.footer-left {
+  display: flex;
+  gap: 50px;
+ position: absolute;
+  left: 120px;                 /* moves icons toward center */
+  bottom: 10px;  
+}
 
-    .footer-left a {
-      color: black;
-      font-size: 34px;
-    }
+.footer-left a {
+  color: black;
+  font-size: 34px;
+  transition: opacity 0.2s ease;
+ cursor: pointer;
+}
 
-    .footer-right {
-      position: absolute;
-      right: 80px;
-      bottom: 30px;
-      font-size: 14px;
-      font-weight: 500;
-    }
+.footer-left a:hover {
+  opacity: 0.65;
+}
+
+.footer-icons a:hover {
+  opacity: 0.7;
+}
+
+
+.footer-right {
+  position: absolute;
+  right: 80px;
+  bottom: 30px;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
   </style>
 </head>
 
