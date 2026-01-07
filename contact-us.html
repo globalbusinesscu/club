@@ -267,15 +267,22 @@ border-radius: 8px
 
 
 <form action="https://formspree.io/f/xojvgvbp" method="POST">
-  <label for="email">Your Email</label>
-  <input type="email" name="email" id="email" placeholder="yourname@email.com" required>
-    <label for="subject">Subject</label>
-  <input type="text" name="subject" id="subject" placeholder="What would you like to talk about?" required>
+  <!-- User's email -->
+  <label for="user-email">Your Email</label>
+  <input type="email" id="user-email" name="_replyto" placeholder="yourname@email.com" required>
 
+  <!-- Subject -->
+  <label for="subject">Subject</label>
+  <input type="text" id="subject" name="subject" placeholder="What would you like to talk about?" required>
+
+  <!-- Message -->
   <label for="message">Message</label>
-  <textarea name="message" id="message" placeholder="Write your message here..." required></textarea>
+  <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
 
-  <button type="submit">Send Message</button>
+  <!-- Hidden field to force Formspree to use your verified email as "from" -->
+  <input type="hidden" name="_subject" value="New Contact Form Submission">
+
+  <button type="submit">Send</button>
 </form>
 <div id="form-status"></div>
 
