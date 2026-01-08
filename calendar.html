@@ -218,6 +218,53 @@ footer::before {
   background: rgba(255, 255, 255, 0.2);
 }
 
+@media (max-width: 768px) {
+  .navbar-items {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .navbar-items li:not(.logo)::after {
+    display: none;
+  }
+
+  .navbar-items a {
+    font-size: 16px;
+  }
+
+  .navbar-items li.logo img {
+    max-width: 55px;
+  }
+
+  .dropdown {
+    min-width: 140px;
+  }
+
+ .calendar-wrapper {
+    height: 450px;
+  }
+
+  .calendar-wrapper iframe {
+    width: 100%;
+    height: 100%;
+  }
+.footer {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .footer-left {
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .footer-right {
+    position: static;
+    text-align: center;
+  }
+
+}
+
   </style>
 </head>
 
