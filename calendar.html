@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Global Business Club</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (kept for footer icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+font-weight: 400; /* light */
+      background-color: #020b1a;
+    }
+
+    /* ================= NAVBAR (UNCHANGED) ================= */
+    /* NAV BAR */
+   .navbar {
+  background-color: #e6e8f0; /* white */
+  padding: 8px 0;       /* enough padding for dropdown to clear? */
+  overflow: visible;     /* IMPORTANT: allows dropdown to show outside nav */
+  position: sticky;    
+  top: 0; 
+ z-index: 9999;
+box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+
+.navbar-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;                 /* horizontal row */
+  justify-content: center;       /* centers the row */
+  align-items: center;           /* vertical alignment */
+  gap: 100px;                     /* space between tabs + logo */
+}
+
+.navbar-items li {
+  position: relative;
+}
+
+.navbar-items a {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+  color: black;
+/* Smooth hover transitions for all nav links */
+  transition: opacity 0.2s ease, color 0.2s ease;
+font-family: 'Poppins', sans-serif;
+
+}
+
+.navbar-items a.join {
+  color: #c9a23f;
+}
+
+.navbar-items > li:hover > a {
+  opacity: 0.65;
+}
+
+/* Vertical dividers between navbar items */
+.navbar-items li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -50px;              /* half of gap (100px / 2) */
+  top: 50%;
+  transform: translateY(-50%);
+  height: 38px;
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Dropdown menus */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+transform: translateX(-50%);
+  background-color: #e6e8f0;
+  min-width: 120px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+z-index: 10000;
+pointer-events: auto;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px;
+  font-size: 13px;
+  color: black;
+width: 100%;
+box-sizing: border-box;
+text-align: center;
+  transition: color 0.2s ease, background-color 0.2s ease;
+font-family: 'Poppins', sans-serif;
+}
+
+.dropdown a:hover {
+color: #000000;       
+background-color: #f5f7fa;
+}
+
+.navbar-items li:hover .dropdown {
+  display: block;
+}
+
+/* Logo */
+.navbar-items li.logo img {
+  max-width: 70px;
+  height: auto;
+}
+
+
+    /* ================= CALENDAR CONTENT ================= */
+   .calendar-section {
+  background-color: #020b1a; /* same navy blue background */
+  text-align: center;
+  padding: 60px 20px;
+  color: white;
+}
+
+.calendar-section h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+.calendar-pdf {
+  width: 90%;           /* width of the PDF box */
+  max-width: 1000px;    /* optional max width */
+  height: 600px;        /* height of the scrollable area */
+  border: 2px solid #c9a23f; /* optional gold border */
+  border-radius: 8px;
+  overflow: auto;       /* ensures scroll within the box */
+}
+
+.calendar-note {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #f0f0f0;
+}
+
+
+    /* ================= FOOTER (UNCHANGED) ================= */
+    .footer {
+  background-color: #e6e8f0; /* white */
+  color: black;
+  padding: 40px 80px;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+   box-shadow: 0 -25px 60px rgba(0, 0, 0, 0.5);
+z-index: 2;
+position: relative;
+}
+
+.footer-left {
+  display: flex;
+  gap: 50px;
+ position: absolute;
+  left: 120px;                 /* moves icons toward center */
+  bottom: 10px;  
+}
+
+.footer-left a {
+  color: black;
+  font-size: 34px;
+  transition: opacity 0.2s ease;
+ cursor: pointer;
+}
+
+.footer-left a:hover {
+  opacity: 0.65;
+}
+
+.footer-icons a:hover {
+  opacity: 0.7;
+}
+
+
+.footer-right {
+  position: absolute;
+  right: 80px;
+  bottom: 30px;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+  </style>
+</head>
+
+<body>
+
+<!-- NAV BAR -->
+  <nav class="navbar">
+  <ul class="navbar-items">
+    <li>
+  <a href="#" class="join">Join</a>
+  <div class="dropdown">
+    <a href="https://forms.gle/CNwmhtr8vVwqtjd76" target="_blank">Join Here</a>
+  </div>
+</li>
+<li>
+<a href="index.html">Home</a>
+</li>
+    <li>
+      <a href="#">Events</a>
+      <div class="dropdown">
+        <a href="calendar.html">Calendar</a>
+      </div>
+    </li>
+    <li>
+      <a href="#" onclick="return false;">Contact</a>
+      <div class="dropdown">
+        <a href="contact-us.html">Contact Us</a>
+        <a href="exec-board.html">Executive Board</a>
+      </div>
+    </li>
+    <li class="logo">
+      <img src="gbclogo.png" alt="Global Business Club Logo">
+    </li>
+  </ul>
+</nav>
+
+<!-- CALENDAR CONTENT -->
+<section class="calendar-section">
+  <h1>Calendar</h1>
+
+  <!-- Scrollable PDF box -->
+  <iframe src="path-to-your-calendar.pdf" 
+          class="calendar-pdf" 
+          frameborder="0">
+  </iframe>
+
+  <p class="calendar-note">
+    Note: More events will be added throughout the semester.
+  </p>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-left">
+    <a href="https://www.linkedin.com/company/global-business-club-cu-boulder/posts/?feedView=all" target="_blank">
+      <i class="fa-brands fa-linkedin"></i>
+    </a>
+
+    <a href="https://www.instagram.com/globalbusinesscu/" target="_blank">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="mailto:global.business@colorado.edu">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+
+  <div class="footer-right">
+    © 2025 CU Global Business Club
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const thankYou = document.getElementById('thank-you');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); // stop the page from reloading
+
+    const formData = new FormData(form);
+
+    fetch('https://formspree.io/f/xojvgvbp', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        thankYou.style.display = 'block'; // show thank you message
+        form.reset(); // clear the fields
+      } else {
+        alert("Oops! There was a problem submitting your form.");
+      }
+    })
+    .catch(error => {
+      alert("Oops! There was a problem submitting your form.");
+    });
+  });
+</script>
+
+
+</body>
+</html>
+
+
+
