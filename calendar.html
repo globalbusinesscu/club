@@ -127,6 +127,13 @@ background-color: #f5f7fa;
   color: white;
 }
 
+.calendar-note {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #f0f0f0;
+}
+
+
 .calendar-section h1 {
   font-size: 36px;
   margin-bottom: 30px;
@@ -142,12 +149,6 @@ background-color: #f5f7fa;
   border: 2px solid #c9a23f; /* optional gold border */
   border-radius: 8px;
   overflow: auto;       /* ensures scroll within the box */
-}
-
-.calendar-note {
-  margin-top: 20px;
-  font-size: 16px;
-  color: #f0f0f0;
 }
 
 
@@ -245,6 +246,11 @@ footer::before {
     height: 450px;
   }
 
+.calendar-frame {
+    width: 100%;
+    height: 100%;
+  }
+
   .calendar-wrapper iframe {
     width: 100%;
     height: 100%;
@@ -306,15 +312,16 @@ footer::before {
 <section class="calendar-section">
   <h1>Calendar</h1>
 
+<p class="calendar-note">
+    Note: More events will be added throughout the semester.
+  </p>
+
   <!-- Scrollable PDF box -->
   <iframe src="gbc-calendar.pdf" 
           class="calendar-pdf" 
           frameborder="0">
   </iframe>
 
-  <p class="calendar-note">
-    Note: More events will be added throughout the semester.
-  </p>
 </section>
 
 
