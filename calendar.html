@@ -244,6 +244,7 @@ footer::before {
 
  .calendar-wrapper {
     height: 450px;
+overflow: auto;
   }
 
 .calendar-frame {
@@ -310,17 +311,21 @@ footer::before {
 
 <!-- CALENDAR CONTENT -->
 <section class="calendar-section">
-  <h1>Calendar</h1>
-
+  
+<h1>Calendar</h1>
 <p class="calendar-note">
     Note: More events will be added throughout the semester.
   </p>
-
-  <!-- Scrollable PDF box -->
-  <iframe src="gbc-calendar.pdf" 
-          class="calendar-pdf" 
-          frameborder="0">
+<div class="calendar-wrapper">
+  <iframe 
+    src="gbc-calendar.pdf" 
+    class="calendar-frame"
+    frameborder="0">
   </iframe>
+  
+</div>
+
+
 
 </section>
 
