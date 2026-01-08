@@ -308,15 +308,19 @@ footer::before {
   }
 
   .group-photo {
-    height: auto;
-    margin-top: 20px;
-  }
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+align-self: flex-start;
+}
 
 .group-photo img {
   width: 100%;
   height: auto;
+  max-height: none;
   object-fit: contain;
-  display: block;
+  aspect-ratio: auto;
 }
 
 
