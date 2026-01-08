@@ -369,6 +369,8 @@ footer::before {
 .hero {
     min-height: 420px;
     background-position: center top;
+background-size: contain;
+    background-repeat: no-repeat;
   }
 
 .about-container {
@@ -377,7 +379,13 @@ footer::before {
   }
 
   .about-image {
-    min-width: 100%;
+    min-width: unset;
+    width: 100%;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 100%;
   }
 
   .about-text h2,
