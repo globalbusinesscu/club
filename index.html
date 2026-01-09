@@ -68,7 +68,7 @@ font-family: 'Poppins', sans-serif;
 }
 
 /* Vertical dividers between navbar items */
-.navbar-items li:not(:last-child):not(.calendar-tab)::after {
+.navbar-items li:not(:last-child):not(.no-divider)::after {
   content: "";
   position: absolute;
   right: -50px;              /* half of gap (100px / 2) */
@@ -455,10 +455,10 @@ margin-top: 0;
     <a href="https://forms.gle/CNwmhtr8vVwqtjd76" target="_blank">Join Here</a>
   </div>
 </li>
-<li>
+<li class="no-divider">
 <a href="#">Home</a>
 </li>
-    <li class="calendar-tab">
+    <li>
       <a href="calendar.html">Calendar</a>
           </li>
     <li>
