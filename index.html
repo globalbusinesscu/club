@@ -68,7 +68,7 @@ font-family: 'Poppins', sans-serif;
 }
 
 /* Vertical dividers between navbar items */
-.navbar-items li:not(:last-child)::after {
+.navbar-items li:not(:last-child):not(.calendar-tab)::after {
   content: "";
   position: absolute;
   right: -50px;              /* half of gap (100px / 2) */
@@ -458,7 +458,7 @@ margin-top: 0;
 <li>
 <a href="#">Home</a>
 </li>
-    <li>
+    <li class="calendar-tab">
       <a href="calendar.html">Calendar</a>
           </li>
     <li>
