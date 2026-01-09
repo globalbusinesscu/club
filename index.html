@@ -68,7 +68,7 @@ font-family: 'Poppins', sans-serif;
 }
 
 /* Vertical dividers between navbar items */
-.navbar-items li:not(.logo)::after {
+.navbar-items li:not(:last-child)::after {
   content: "";
   position: absolute;
   right: -50px;              /* half of gap (100px / 2) */
@@ -77,10 +77,6 @@ font-family: 'Poppins', sans-serif;
   height: 38px;
   width: 1px;
   background-color: rgba(0, 0, 0, 0.4);
-}
-
-.navbar-items li {
-  padding: 0 50px;
 }
 
 
@@ -463,7 +459,12 @@ margin-top: 0;
 <a href="#">Home</a>
 </li>
     <li>
-      <a href="calendar.html">Calendar</a>
+
+     <a href="#">Events</a>      
+      <div class="dropdown">
+        <a href="calendar.html">Calendar</a>
+      </div>
+
           </li>
     <li>
       <a href="#" onclick="return false;">Contact</a>
@@ -507,7 +508,7 @@ margin-top: 0;
 
     <div class="meeting-card" data-aos="fade-up" data-aos-delay="100">
       <i class="fa-solid fa-calendar-days meeting-icon"></i>
-      <p>When:<strong> Wednesdays @ 5:30 pm (see Calendar)</strong></p>
+      <p>When:<strong> Wednesday @ 5:30 pm (see Events)</strong></p>
     </div>
 
     <div class="meeting-card" data-aos="fade-up" data-aos-delay="100">
