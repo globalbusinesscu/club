@@ -1,567 +1,105 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Global Business Club</title>
-<!-- Google Fonts: Poppins Extra Light -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-
-<link rel="icon" type="image/png" href="gbclogo.png">
-
-
-
-  <style>
-    body {
-      margin: 0;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400; /* light */
-background-color: #020b1a; /* navy blue so no white shows */
-  padding: 0;
-}
-
-    /* NAV BAR */
-   .navbar {
-  background-color: #e6e8f0; /* white */
-  padding: 8px 0;       /* enough padding for dropdown to clear? */
-  overflow: visible;     /* IMPORTANT: allows dropdown to show outside nav */
-  position: sticky;    
-  top: 0; 
- z-index: 9999;
-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
-}
-
-
-.navbar-items {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;                 /* horizontal row */
-  justify-content: center;       /* centers the row */
-  align-items: center;           /* vertical alignment */
-  gap: 100px;                     /* space between tabs + logo */
-}
-
-.navbar-items li {
-  position: relative;
-}
-
-.navbar-items a {
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 20px;
-  color: black;
-/* Smooth hover transitions for all nav links */
-  transition: opacity 0.2s ease, color 0.2s ease;
-font-family: 'Poppins', sans-serif;
-
-}
-
-.navbar-items a.join {
-  color: #c9a23f;
-}
-
-.navbar-items > li:hover > a {
-  opacity: 0.65;
-}
-
-/* Vertical dividers between navbar items */
-.navbar-items li:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: -50px;              /* half of gap (100px / 2) */
-  top: 50%;
-  transform: translateY(-50%);
-  height: 38px;
-  width: 1px;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-
-/* Dropdown menus */
-.dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-transform: translateX(-50%);
-  background-color: #e6e8f0;
-  min-width: 120px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-z-index: 10000;
-pointer-events: auto;
-}
-
-.dropdown a {
-  display: block;
-  padding: 10px;
-  font-size: 13px;
-  color: black;
-width: 100%;
-box-sizing: border-box;
-text-align: center;
-  transition: color 0.2s ease, background-color 0.2s ease;
-font-family: 'Poppins', sans-serif;
-}
-
-.dropdown a:hover {
-color: #000000;       
-background-color: #f5f7fa;
-}
-
-.navbar-items li:hover .dropdown {
-  display: block;
-}
-
-/* Logo */
-.navbar-items li.logo img {
-  max-width: 70px;
-  height: auto;
-}
-
-    /* HERO SECTION */
-    .hero {
-      position: relative;
-      background-image: url('herogbc.png'); /* replace with your image */
-      background-size: cover;
-      background-position: center;
-      display: flex;
-min-height: 700px;
-width: 100%
-      align-items: center;
-      justify-content: center;
-margin: 0;
-  padding: 0;
-    }
-
-    /* ABOUT US SECTION */
-    .about-section {
-  background-color: #020b1a; /* dark navy */
-  padding: 60px 80px;
-display: flex;
-justify-content: center; 
-  align-items: flex-start;
-position: relative;
-  z-index: 2;
-overflow: visible;
- margin: 0;
-  box-shadow: 0 -18px 40px rgba(0, 0, 0, 0.5);
-}
-
-
-    .about-text h2 {
-      font-size: 32px;
-color: white;
-      margin-bottom: 20px;
-font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-padding-top: 40px;
-padding-left: 30px;
-
-    }
-
-    .about-text p {
-      font-size: 18px;
-      line-height: 1.6;
-color: white;
-font-family: 'Poppins', sans-serif;
-  font-weight: 400
-max-width: 400px;
-flex: 1;
-padding-left: 30px;
-
-    }
-.about-container {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  max-width: 1800px;
-  margin: auto;
-}
-
-.about-image {
-  flex: 3;        /* image dominates */
-min-width: 600px;
-}
-
-.about-image img {
-  width: 100%;
-  height: auto;
-  max-width: none;
-  display: block;
-border-radius: 8px; 
-box-shadow: 0 8px 20px rgba(0,0,0,0.3);
- transition: transform 0.4s ease; 
-}
-
-.about-image img:hover {
-  transform: scale(1.05); 
-}
-
-.about-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.15);
-}
-
-
-.meetings-section {
-  background-color: #020b1a; /* dark navy */
-  padding-right: 80px;
-padding-left: 80px;
-position: relative;
-  z-index: 1;
-overflow: hidden;
- margin-bottom: 40px;
-}
-
-.meetings-section::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-  pointer-events: none;
-}
-
-.meetings-title {
-  color: white;
-  font-size: 32px;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 50px;
-margin-top: 50px;
-}
-
-.meetings-cards {
-  max-width: 700px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-padding-bottom: 100px;
-}
-
-.meeting-card {
-  background-color: rgba(255, 255, 255, 0.85); /* transparent white */
-  padding: 25px 30px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-border-radius: 4px;
-box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  transition: transform 0.3s ease, box-shadow 0.25s ease;
-}
-
-.meeting-card p {
-  margin: 0;
-  font-size: 20px;
- font-weight: 500;
-  color: black;
-}
-
-.meeting-icon {
-  font-size: 30px;
-  color: #c9a23f; /* gold */
-}
-
-.meeting-card:hover {
-  transition: transform 0.3s ease;
-transform: translateY(-6px);
-  box-shadow: 0 14px 35px rgba(0,0,0,0.35);
-
-}
-
-.footer {
-  background-color: #e6e8f0; /* white */
-  color: black;
-  padding: 40px 80px;
-  display: flex;
-  gap: 60px;
-  align-items: center;
-   box-shadow: 0 -25px 60px rgba(0, 0, 0, 0.5);
-z-index: 2;
-position: relative;
-}
-
-.footer-left {
-  display: flex;
-  gap: 50px;
- position: absolute;
-  left: 120px;                 /* moves icons toward center */
-  bottom: 10px;  
-}
-
-.footer-left a {
-  color: black;
-  font-size: 34px;
-  transition: opacity 0.2s ease;
- cursor: pointer;
-}
-
-.footer-left a:hover {
-  opacity: 0.65;
-}
-
-.footer-icons a:hover {
-  opacity: 0.7;
-}
-
-
-.footer-right {
-  position: absolute;
-  right: 80px;
-  bottom: 30px;
-
-  font-size: 14px;
-  font-weight: 500;
-}
-
-
-.fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.2);
-}
-
-
-@media (max-width: 768px) {
-  .navbar-items {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .navbar-items li:not(.logo)::after {
-    display: none;
-  }
-
-  .navbar-items a {
-    font-size: 16px;
-  }
-
-  .navbar-items li.logo img {
-    max-width: 55px;
-  }
-
-  .dropdown {
-    min-width: 140px;
-  }
-
-.hero {
-    background-position: center top;
-background-size: contain;
-    background-repeat: no-repeat;
-height: auto;
-    padding-top: 56.25%; /* controls image height */
-    min-height: unset;
-margin-bottom: 0;
-  padding-bottom: 0;
-
-  }
-
-.about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-image {
-    min-width: unset;
-    width: 100%;
-margin-top: 0;
-  }
-
-  .about-image img {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .about-text h2,
-  .about-text p {
-    padding-left: 0;
-  }
-
-  .about-text p {
-    max-width: 100%;
-
-  }
- .meetings-cards {
-    padding-bottom: 40px;
-  }
-
-  .meeting-card {
-    flex-direction: row;
-    padding: 20px;
-  }
-
-  .meeting-card p {
-    font-size: 16px;
-  }
-
-.footer {
-    flex-direction: column;
-    padding: 30px 20px;
-  }
-
-  .footer-left {
-    position: static;
-    margin-bottom: 20px;
-  }
-
-  .footer-right {
-    position: static;
-    text-align: center;
-  }
-
-}
-
-
-  </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Business Club | CU Boulder</title>
+<link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-  <!-- NAV BAR -->
-  <nav class="navbar">
-  <ul class="navbar-items">
-    <li>
-  <a href="#" class="join">Join</a>
-  <div class="dropdown">
-    <a href="https://forms.gle/CNwmhtr8vVwqtjd76" target="_blank">Join Here</a>
-  </div>
-</li>
-<li>
-<a href="#">Home</a>
-</li>
-    <li>
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="images/gbc-logo.png" alt="Global Business Club Logo">
+      <span class="nav-brand-text">Global Business Club<span>CU Boulder · Leeds School of Business</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="index.html" class="current">Home</a>
+      <a href="calendar.html">Events</a>
+      <a href="exec-board.html">Executive Board</a>
+      <a href="contact-us.html">Contact</a>
+      <a href="https://forms.gle/CNwmhtr8vVwqtjd76" class="btn-join">Join GBC</a>
+    </div>
+  </nav>
+</header>
 
-     <a href="#">Events</a>      
-      <div class="dropdown">
-        <a href="calendar.html">Calendar</a>
+<section class="hero">
+  <div class="grid-texture"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="eyebrow">Est. 2025 · Leeds School of Business</div>
+      <h1>Think globally.<br>Lead <em>anywhere.</em></h1>
+      <p class="lede">The Global Business Club builds a community of CU Boulder students exploring international markets, cross-cultural communication, and global career pathways — through events, education, and real-world experience.</p>
+      <div class="hero-actions">
+        <a href="https://forms.gle/CNwmhtr8vVwqtjd76" class="btn-primary">Join the Club</a>
+        <a href="calendar.html" class="btn-secondary">View Upcoming Events</a>
       </div>
+    </div>
+  </div>
+</section>
 
-          </li>
-    <li>
-      <a href="#" onclick="return false;">Contact</a>
-      <div class="dropdown">
-        <a href="contact-us.html">Contact Us</a>
+<section id="about">
+  <div class="container">
+    <div class="two-col">
+      <div class="about-copy">
+        <div class="section-label">About Us</div>
+        <h2 class="section-title">A globally minded community, built for every major.</h2>
+        <p>Global Business Club creates a collaborative space where students explore international markets, cross-cultural communication, and global career pathways. Through speaker events, workshops, and networking opportunities, we prepare CU Boulder students to succeed in global business environments.</p>
+        <p>GBC is open to all Leeds students — and students across CU Boulder — who are curious about global business, international careers, or operating in multicultural environments. No prior experience required.</p>
+      </div>
+      <div class="about-media">
+        <img src="aboutimage.png" alt="Global Business Club members">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="info-strip">
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="info-label">Meetings</div>
+        <div class="info-value">Wednesdays, 5:30 PM</div>
+        <div class="info-sub">See the calendar for weekly topics</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Location</div>
+        <div class="info-value">KOBL 320</div>
+        <div class="info-sub">Koelbel Building, CU Boulder</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Eligibility</div>
+        <div class="info-value">All Majors Welcome</div>
+        <div class="info-sub">No prior experience required</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="images/gbc-logo.png" alt="Global Business Club Logo">
+        <span class="footer-brand-text">Global Business Club</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="calendar.html">Events</a>
         <a href="exec-board.html">Executive Board</a>
+        <a href="contact-us.html">Contact</a>
+        <a href="https://www.linkedin.com/company/global-business-club-cu-boulder/posts/?feedView=all">LinkedIn</a>
+        <a href="https://www.instagram.com/globalbusinesscu/">Instagram</a>
       </div>
-    </li>
-    <li class="logo">
-      <img src="gbclogo.png" alt="Global Business Club Logo">
-    </li>
-  </ul>
-</nav>
-
-
-  <!-- HERO SECTION -->
-  <section class="hero">
-  <!-- no text overlay -->
-</section>
-
-  <!-- ABOUT US / HOME CONTENT -->
-<section class="about-section">
-  <div class="about-container">
-    <div class="about-image" data-aos="fade-up" data-aos-delay="150">
-      <img src="aboutimage.png" alt="About Us Image">
     </div>
-    <div class="about-text" data-aos="fade-up">
-      <h2>About Us</h2>
-      <p>
-        Welcome to the Global Business Club! Our mission is to create a collaborative, globally minded community where students explore international markets, cross-cultural communication, and global career pathways. Through events, education, and experiential opportunities, the club prepares CU Boulder students to succeed in global business environments.
-      </p>
+    <div class="footer-bottom">
+      <span>&copy; 2026 CU Global Business Club</span>
+      <span>global.business@colorado.edu</span>
     </div>
-  </div>
-</section>
-
-<section class="meetings-section">
-
- <h2 class="meetings-title" data-aos="fade-up">Meetings</h2>
-
-  <div class="meetings-cards">
-
-    <div class="meeting-card" data-aos="fade-up" data-aos-delay="100">
-      <i class="fa-solid fa-calendar-days meeting-icon"></i>
-      <p>When:<strong> Wednesday @ 5:30 pm (see Events)</strong></p>
-    </div>
-
-    <div class="meeting-card" data-aos="fade-up" data-aos-delay="100">
-      <i class="fa-solid fa-location-dot meeting-icon"></i>
-      <p>Where:<strong> KOBL 320</strong></p>
-    </div>
-
-    <div class="meeting-card" data-aos="fade-up" data-aos-delay="100">
-      <i class="fa-solid fa-globe meeting-icon"></i>
-      <p><strong>All majors welcome!</strong></p>
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<footer class="footer">
-  <div class="footer-left">
-    <a href="https://www.linkedin.com/company/global-business-club-cu-boulder/posts/?feedView=all" target="_blank">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
-
-    <a href="https://www.instagram.com/globalbusinesscu/" target="_blank">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-
-    <a href="mailto:global.business@colorado.edu">
-      <i class="fa-solid fa-envelope"></i>
-    </a>
-  </div>
-
-  <div class="footer-right">
-    © 2025 CU Global Business Club
   </div>
 </footer>
 
-<script>
-  const faders = document.querySelectorAll('.fade-up');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  }, { threshold: 0.2 });
-
-  faders.forEach(el => observer.observe(el));
-</script>
-
-
 </body>
 </html>
-
-
