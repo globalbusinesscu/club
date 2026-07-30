@@ -1,615 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Global Business Club</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome (kept for footer icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<link rel="icon" type="image/png" href="gbclogo.png">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-font-weight: 400; /* light */
-      background-color: #020b1a;
-    }
-
-    /* ================= NAVBAR (UNCHANGED) ================= */
-    /* NAV BAR */
-   .navbar {
-  background-color: #e6e8f0; /* white */
-  padding: 8px 0;       /* enough padding for dropdown to clear? */
-  overflow: visible;     /* IMPORTANT: allows dropdown to show outside nav */
-  position: sticky;    
-  top: 0; 
- z-index: 9999;
-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
-}
-
-
-.navbar-items {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;                 /* horizontal row */
-  justify-content: center;       /* centers the row */
-  align-items: center;           /* vertical alignment */
-  gap: 100px;                     /* space between tabs + logo */
-}
-
-.navbar-items li {
-  position: relative;
-}
-
-.navbar-items a {
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 20px;
-  color: black;
-/* Smooth hover transitions for all nav links */
-  transition: opacity 0.2s ease, color 0.2s ease;
-font-family: 'Poppins', sans-serif;
-
-}
-
-.navbar-items a.join {
-  color: #c9a23f;
-}
-
-.navbar-items > li:hover > a {
-  opacity: 0.65;
-}
-
-/* Vertical dividers between navbar items */
-.navbar-items li:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: -50px;              /* half of gap (100px / 2) */
-  top: 50%;
-  transform: translateY(-50%);
-  height: 38px;
-  width: 1px;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-/* Dropdown menus */
-.dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-transform: translateX(-50%);
-  background-color: #e6e8f0;
-  min-width: 120px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-z-index: 10000;
-pointer-events: auto;
-}
-
-.dropdown a {
-  display: block;
-  padding: 10px;
-  font-size: 13px;
-  color: black;
-width: 100%;
-box-sizing: border-box;
-text-align: center;
-  transition: color 0.2s ease, background-color 0.2s ease;
-font-family: 'Poppins', sans-serif;
-}
-
-.dropdown a:hover {
-color: #000000;       
-background-color: #f5f7fa;
-}
-
-.navbar-items li:hover .dropdown {
-  display: block;
-}
-
-/* Logo */
-.navbar-items li.logo img {
-  max-width: 70px;
-  height: auto;
-}
-
-
-  /* ================= EXECUTIVE BOARD ================= */
-
-.exec-section {
-  background-color: #020b1a;
-  padding: 100px 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-.exec-section h1 {
-  color: white;
-  font-size: 45px;
-  font-weight: 500;
-margin-top: -40px;
-  margin-bottom: 40px;
-}
-
-.group-photo {
-  display: block;
-  width: 100%;
-  max-width: 900px;
-  height: auto;
-  margin-bottom: 60px;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
-}
-
-
-.group-photo:hover {
-  transform: scale(1.05); 
-}
-
-.exec-card {
-  background-color: white;
-  width: 100%;
-  max-width: 700px;
-  padding: 30px;
-  margin-bottom: 40px;
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  border-radius: 6px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* optional shadow */
-}
-
-.exec-card:hover {
-  box-shadow: 0 14px 35px rgba(0,0,0,0.35); /* deeper shadow */
-}
-
-.exec-card img {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 4px;
- transition: transform 0.3s ease;
-}
-
-.exec-card:hover img {
-  transform: scale(1.05);
-}
-
-.exec-info h2 {
-  margin: 0;
-  font-size: 26px;
-  font-weight: 600;
-  color: black;
-}
-
-.exec-info .position {
-  font-style: italic;
-  font-size: 18px;
-  margin: 6px 0 10px;
-  color: black;
- font-weight: 500;
-}
-
-.exec-info .email {
-  font-size: 15px;
-  margin-bottom: 10px;
-  color: black;
- font-weight: 500;
-}
-
-.linkedin-icon {
-  color: #c9a23f;
-  font-size: 34px;
-  text-decoration: none;
- transition: opacity 0.2s ease;
-}
-
-.linkedin-icon:hover {
-  opacity: 0.7;
-}
-
-
-    /* ================= FOOTER (UNCHANGED) ================= */
-    .footer {
-  background-color: #e6e8f0; /* white */
-  color: black;
-  padding: 40px 80px;
-  display: flex;
-  gap: 60px;
-  align-items: center;
-   box-shadow: 0 -25px 60px rgba(0, 0, 0, 0.5);
-z-index: 2;
-position: relative;
-}
-
-.footer-left {
-  display: flex;
-  gap: 50px;
- position: absolute;
-  left: 120px;                 /* moves icons toward center */
-  bottom: 10px;  
-}
-
-.footer-left a {
-  color: black;
-  font-size: 34px;
-  transition: opacity 0.2s ease;
- cursor: pointer;
-}
-
-.footer-left a:hover {
-  opacity: 0.7;
-}
-
-.footer-icons a:hover {
-  opacity: 0.7;
-}
-
-
-.footer-right {
-  position: absolute;
-  right: 80px;
-  bottom: 30px;
-
-  font-size: 14px;
-  font-weight: 500;
-}
-
-
-.fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.2);
-}
-
-@media (max-width: 768px) {
-
-.navbar-items {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .navbar-items li:not(.logo)::after {
-    display: none;
-  }
-
-  .navbar-items a {
-    font-size: 16px;
-  }
-
-  .navbar-items li.logo img {
-    max-width: 55px;
-  }
-
-  .dropdown {
-    min-width: 140px;
-  }
-
-  .group-photo {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: none;
-align-self: flex-start;
-height: auto;
-  object-fit: contain;
- border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-
-}
-
-
-  .exec-card {
-    max-width: 900px;
-align-items: flex-start;
-    padding: 20px;
-  }
-
-  .exec-card img {
-    width: 120px;
-    height: 120px;
-  }
-
-.exec-info .email {
-  word-break: break-word;
-}
-
-  .exec-info h2 {
-    font-size: 20px;
-  }
-
-  .linkedin-icon i {
-    font-size: 26px;
-  }
-
-.footer {
-    flex-direction: column;
-    padding: 30px 20px;
-  }
-
-  .footer-left {
-    position: static;
-    margin-bottom: 20px;
-  }
-
-  .footer-right {
-    position: static;
-    text-align: center;
-  }
-
-}
-
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Board | Global Business Club</title>
+<link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<!-- NAV BAR -->
-  <nav class="navbar">
-  <ul class="navbar-items">
-    <li>
-  <a href="#" class="join">Join</a>
-  <div class="dropdown">
-    <a href="https://forms.gle/CNwmhtr8vVwqtjd76" target="_blank">Join Here</a>
-  </div>
-</li>
-<li>
-<a href="index.html">Home</a>
-</li>
-    <li>
-           <a href="#">Events</a>      
-      <div class="dropdown">
-        <a href="calendar.html">Calendar</a>
-      </div>
-    </li>
-    <li>
-      <a href="#" onclick="return false;">Contact</a>
-      <div class="dropdown">
-        <a href="contact-us.html">Contact Us</a>
-        <a href="exec-board.html">Executive Board</a>
-      </div>
-    </li>
-    <li class="logo">
-      <img src="gbclogo.png" alt="Global Business Club Logo">
-    </li>
-  </ul>
-</nav>
-
-<!-- EXEC CONTENT -->
-<section class="exec-section">
-
-  <h1>Executive Board</h1>
-
-<img src="images/group-photo.jpg" alt="Executive Board Group Photo" class="group-photo">
-
-<!-- Member 1: Brandon -->
-  <div class="exec-card">
-    <img src="images/brandon1.jpg" alt="Brandon Su">
-
-    <div class="exec-info">
-      <h2>Brandon Su</h2>
-      <p class="position">President</p>
-      <p class="email">brandon.su@colorado.edu</p>
-
-<a href="https://www.linkedin.com/in/brandon-su-/" target="_blank" class="linkedin-icon">
-      <i class="fa-brands fa-linkedin"></i>
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="images/gbc-logo.png" alt="Global Business Club Logo">
+      <span class="nav-brand-text">Global Business Club<span>CU Boulder · Leeds School of Business</span></span>
     </a>
-
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="calendar.html">Events</a>
+      <a href="exec-board.html" class="current">Executive Board</a>
+      <a href="contact-us.html">Contact</a>
+      <a href="https://forms.gle/CNwmhtr8vVwqtjd76" class="btn-join">Join GBC</a>
     </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="grid-texture"></div>
+  <div class="container page-hero-inner">
+    <div class="eyebrow">Leadership</div>
+    <h1>Executive Board</h1>
+    <p>The students steering GBC's mission — from marketing and partnerships to events and global strategy.</p>
   </div>
-
-<!-- Member 2: Ren -->
-  <div class="exec-card">
-    <img src="images/ren2.jpg" alt="Ren Garfield">
-
-    <div class="exec-info">
-      <h2>Ren Garfield</h2>
-      <p class="position">Vice President</p>
-      <p class="email">ren.garfield@colorado.edu</p>
-
-<a href="https://www.linkedin.com/in/ren-garfield-847a02238/" target="_blank" class="linkedin-icon">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
-
-    </div>
-  </div>
-
-<!-- Member 3: Kaia -->
-  <div class="exec-card">
-    <img src="images/kaia3.jpg" alt="Kaia Schultz">
-
-    <div class="exec-info">
-      <h2>Kaia Schultz</h2>
-      <p class="position">Director of Marketing & Technology</p>
-      <p class="email">kasc2771@colorado.edu</p>
-
-<a href="https://www.linkedin.com/in/kaia-schultz/" target="_blank" class="linkedin-icon">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
-
-    </div>
-  </div>
-
-<!-- Member 4: Nico -->
-  <div class="exec-card">
-    <img src="images/nico4.jpg" alt="Nico Herbert">
-
-    <div class="exec-info">
-      <h2>Nico Herbert</h2>
-      <p class="position">Director of Membership & Engagement</p>
-      <p class="email">nico.herbert@colorado.edu</p>
-
-      <a href="https://www.linkedin.com/in/nicoherbert/" target="_blank" class="linkedin-icon">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
-
-    </div>
-  </div>
-
-<!-- Member 5: Nadav -->
-  <div class="exec-card">
-    <img src="images/nadav5.jpg" alt="Nadav Goldstein">
-
-    <div class="exec-info">
-      <h2>Nadav Goldstein</h2>
-      <p class="position">Director of Outreach & Partnerships</p>
-      <p class="email">Nago3624@colorado.edu</p>
-
-      <a href="https://www.linkedin.com/in/nadav-goldstein/" target="_blank" class="linkedin-icon">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
-
-
-    </div>
-  </div>
-
-<!-- Member 6: Lily -->
-  <div class="exec-card">
-    <img src="images/lily6.jpg" alt="Lily Panagos">
-
-    <div class="exec-info">
-      <h2>Lily Panagos</h2>
-      <p class="position">Director of Events & Planning</p>
-      <p class="email">lipa1311@colorado.edu</p>
-
-<a href="https://www.linkedin.com/in/lily-panagos/" target="_blank" class="linkedin-icon">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
-
-    </div>
-  </div>
-
-<!-- Member 7: Greyson Rice -->
-  <div class="exec-card">
-    <img src="images/greyson7.jpg" alt="Greyson Rice">
-
-    <div class="exec-info">
-      <h2>Greyson Rice</h2>
-      <p class="position">Director of Finance & Sponsorships</p>
-      <p class="email">grri5368@colorado.edu</p>
-
-      <a href="https://www.linkedin.com/in/greyson-rice-676268327/" target="_blank" class="linkedin-icon">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
-
-    </div>
-  </div>
-
-<!-- Member 8: Jack -->
-  <div class="exec-card">
-    <img src="images/jack8.jpg" alt="Jack Greenman">
-
-    <div class="exec-info">
-      <h2>Jack Greenman</h2>
-      <p class="position">Director of Global Strategy & Innovation</p>
-      <p class="email">jagr1654@colorado.edu</p>
-
-      <a href="https://www.linkedin.com/in/jackgreenman/" target="_blank" class="linkedin-icon">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
-
-    </div>
-  </div>
-
-<!-- Member 9: Augie -->
-  <div class="exec-card">
-    <img src="images/augie9.jpg" alt="Augie Tomlinson">
-
-    <div class="exec-info">
-      <h2>Augie Tomlinson</h2>
-      <p class="position">Director of Professional Development</p>
-      <p class="email">augie.tomlinson@colorado.edu</p>
-
-      <a href="https://www.linkedin.com/in/august-tomlinson/" target="_blank" class="linkedin-icon">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
-
-    </div>
-  </div>
-
 </section>
 
+<section>
+  <div class="container">
+    <div class="board-group-photo">
+      <img src="images/group-photo.jpg" alt="GBC Executive Board Group Photo">
+    </div>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-left">
-    <a href="https://www.linkedin.com/company/global-business-club-cu-boulder/posts/?feedView=all" target="_blank">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
+    <div class="board-grid">
 
-    <a href="https://www.instagram.com/globalbusinesscu/" target="_blank">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
+      <div class="board-card">
+        <div class="board-photo"><img src="images/brandon1.jpg" alt="Brandon Su"></div>
+        <div class="board-info">
+          <h3>Brandon Su</h3>
+          <div class="board-role">President</div>
+          <div class="board-contact">
+            <a href="mailto:brandon.su@colorado.edu">brandon.su@colorado.edu</a>
+            <a href="https://www.linkedin.com/in/brandon-su-/">LinkedIn</a>
+          </div>
+        </div>
+      </div>
 
-    <a href="mailto:global.business@colorado.edu">
-      <i class="fa-solid fa-envelope"></i>
-    </a>
+      <div class="board-card">
+        <div class="board-photo"><img src="images/ren2.jpg" alt="Ren Garfield"></div>
+        <div class="board-info">
+          <h3>Ren Garfield</h3>
+          <div class="board-role">Vice President</div>
+          <div class="board-contact">
+            <a href="mailto:ren.garfield@colorado.edu">ren.garfield@colorado.edu</a>
+            <a href="https://www.linkedin.com/in/ren-garfield-847a02238/">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-photo"><img src="images/kaia3.jpg" alt="Kaia Schultz"></div>
+        <div class="board-info">
+          <h3>Kaia Schultz</h3>
+          <div class="board-role">Director of Marketing &amp; Technology</div>
+          <div class="board-contact">
+            <a href="mailto:kasc2771@colorado.edu">kasc2771@colorado.edu</a>
+            <a href="https://www.linkedin.com/in/kaia-schultz/">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-photo"><img src="images/nico4.jpg" alt="Nico Herbert"></div>
+        <div class="board-info">
+          <h3>Nico Herbert</h3>
+          <div class="board-role">Director of Membership &amp; Engagement</div>
+          <div class="board-contact">
+            <a href="mailto:nico.herbert@colorado.edu">nico.herbert@colorado.edu</a>
+            <a href="https://www.linkedin.com/in/nicoherbert/">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-photo"><img src="images/nadav5.jpg" alt="Nadav Goldstein"></div>
+        <div class="board-info">
+          <h3>Nadav Goldstein</h3>
+          <div class="board-role">Director of Outreach &amp; Partnerships</div>
+          <div class="board-contact">
+            <a href="mailto:Nago3624@colorado.edu">Nago3624@colorado.edu</a>
+            <a href="https://www.linkedin.com/in/nadav-goldstein/">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-photo"><img src="images/lily6.jpg" alt="Lily Panagos"></div>
+        <div class="board-info">
+          <h3>Lily Panagos</h3>
+          <div class="board-role">Director of Events &amp; Planning</div>
+          <div class="board-contact">
+            <a href="mailto:lipa1311@colorado.edu">lipa1311@colorado.edu</a>
+            <a href="https://www.linkedin.com/in/lily-panagos/">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-photo"><img src="images/greyson7.jpg" alt="Greyson Rice"></div>
+        <div class="board-info">
+          <h3>Greyson Rice</h3>
+          <div class="board-role">Director of Finance &amp; Sponsorships</div>
+          <div class="board-contact">
+            <a href="mailto:grri5368@colorado.edu">grri5368@colorado.edu</a>
+            <a href="https://www.linkedin.com/in/greyson-rice-676268327/">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-photo"><img src="images/jack8.jpg" alt="Jack Greenman"></div>
+        <div class="board-info">
+          <h3>Jack Greenman</h3>
+          <div class="board-role">Director of Global Strategy &amp; Innovation</div>
+          <div class="board-contact">
+            <a href="mailto:jagr1654@colorado.edu">jagr1654@colorado.edu</a>
+            <a href="https://www.linkedin.com/in/jackgreenman/">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-photo"><img src="images/augie9.jpg" alt="Augie Tomlinson"></div>
+        <div class="board-info">
+          <h3>Augie Tomlinson</h3>
+          <div class="board-role">Director of Professional Development</div>
+          <div class="board-contact">
+            <a href="mailto:augie.tomlinson@colorado.edu">augie.tomlinson@colorado.edu</a>
+            <a href="https://www.linkedin.com/in/august-tomlinson/">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
+</section>
 
-  <div class="footer-right">
-    © 2025 CU Global Business Club
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="images/gbc-logo.png" alt="Global Business Club Logo">
+        <span class="footer-brand-text">Global Business Club</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="calendar.html">Events</a>
+        <a href="exec-board.html">Executive Board</a>
+        <a href="contact-us.html">Contact</a>
+        <a href="https://www.linkedin.com/company/global-business-club-cu-boulder/posts/?feedView=all">LinkedIn</a>
+        <a href="https://www.instagram.com/globalbusinesscu/">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 CU Global Business Club</span>
+      <span>global.business@colorado.edu</span>
+    </div>
   </div>
 </footer>
 
-<script>
-  const form = document.getElementById('contactForm');
-  const thankYou = document.getElementById('thank-you');
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault(); // stop the page from reloading
-
-    const formData = new FormData(form);
-
-    fetch('https://formspree.io/f/xojvgvbp', {
-      method: 'POST',
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    })
-    .then(response => {
-      if (response.ok) {
-        thankYou.style.display = 'block'; // show thank you message
-        form.reset(); // clear the fields
-      } else {
-        alert("Oops! There was a problem submitting your form.");
-      }
-    })
-    .catch(error => {
-      alert("Oops! There was a problem submitting your form.");
-    });
-  });
-</script>
-
-
 </body>
 </html>
-
-
-
