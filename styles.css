@@ -142,10 +142,10 @@ a { color: inherit; text-decoration: none; }
 .btn-join {
   background: var(--gold);
   color: var(--navy) !important;
-  padding: 10px 26px;
+  padding: 12px 30px;
   border-radius: 2px;
   font-weight: 600;
-  font-size: 0.84rem;
+  font-size: 0.9rem;
   letter-spacing: 0.03em;
   white-space: nowrap;
   transition: background 0.2s ease, transform 0.2s ease;
