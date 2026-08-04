@@ -142,11 +142,12 @@ a { color: inherit; text-decoration: none; }
 .btn-join {
   background: var(--gold);
   color: var(--navy) !important;
-  padding: 10px 22px;
+  padding: 10px 26px;
   border-radius: 2px;
   font-weight: 600;
   font-size: 0.84rem;
   letter-spacing: 0.03em;
+  white-space: nowrap;
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
@@ -506,7 +507,7 @@ h2.section-title {
 
 .cal-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 28px;
 }
 
@@ -568,11 +569,25 @@ h2.section-title {
 }
 
 .contact-row a, .contact-row span {
-  color: rgba(255,255,255,0.85);
   font-size: 0.95rem;
 }
 
-.contact-row a:hover { color: var(--gold); }
+.contact-row span {
+  color: rgba(255,255,255,0.85);
+}
+
+.contact-row a {
+  color: var(--gold-pale);
+  text-decoration: underline;
+  text-decoration-color: rgba(228,190,99,0.45);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.contact-row a:hover {
+  color: var(--gold);
+  text-decoration-color: var(--gold);
+}
 
 .form-group { margin-bottom: 20px; }
 
